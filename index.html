@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css"
+    />
+
+    <!-- Raphael must be included before justgage -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"
+    ></script>
+    <link rel="stylesheet" href="main.css" />
+    <title>Typing Speed Analyser</title>
+  </head>
+  <body>
+    <main>
+      <div class="header-container">
+        <header>
+          <section class="header-section">
+            <ul class="time-options">
+              <li>
+                <i class="fa-solid fa-clock orange fs-md"></i>
+              </li>
+              <li>
+                <button class="time-option active-time-option fs-md">15</button>
+              </li>
+              <li><button class="time-option fs-md">30</button></li>
+              <li><button class="time-option fs-md">60</button></li>
+              <li><button class="time-option fs-md">120</button></li>
+            </ul>
+          </section>
+          <section class="header-section">
+            <span id="wpm" class="fs-md"></span>
+          </section>
+          <section class="header-section">
+            <span id="accuracy" class="fs-md"></span>
+          </section>
+          <section class="header-section">
+            <span id="timer" class="fs-md">15s</span>
+          </section>
+        </header>
+      </div>
+
+      <section class="textarea-container">
+        <div class="textarea-wrapper">
+          <textarea id="inputAreaPlaceholder" readonly></textarea>
+
+          <textarea
+            id="inputArea"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          ></textarea>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal hide" id="resultsModal">
+      <div class="modal-header">
+        <button id="closeModalBtn">
+          <i class="fa-duotone fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div id="accuracyGauge" class="gauge"></div>
+        <div id="wpmGauge" class="gauge"></div>
+      </div>
+      <div class="modal-footer hide" id="modalFooter">
+        <div class="modal-footer-wpm">
+          <div title="Words Per Minute">WPM:</div>
+          <div id="averageWPM"></div>
+          <div id="bestWPM"></div>
+          <div id="typingLevel"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
